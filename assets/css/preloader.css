@@ -1,0 +1,103 @@
+#preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background-color: #63a4ff;
+    background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
+    ;
+    font-family: Montserrat;
+    z-index: 100000;
+}
+
+.disppear {
+    animation: vanish 2s forwards;
+}
+
+@keyframes vanish {
+    100% {
+
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.text {
+    color: #000;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.bounceball1,
+.bounceball2,
+.bounceball3,
+.bounceball4 {
+    position: relative;
+    display: inline-block;
+    height: 47px;
+    width: 15px;
+    /* background-color: blue; */
+}
+
+.bounceball1::before,
+.bounceball2::before,
+.bounceball3::before,
+.bounceball4::before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    width: 10px;
+    height: 25px;
+    border-radius: 1%;
+    background-color: #7f5a83;
+    background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+
+    transform-origin: 50%;
+}
+
+.bounceball1::before {
+    animation: bounce 500ms alternate infinite ease;
+}
+
+.bounceball2::before {
+    animation: bounce 400ms alternate infinite ease;
+}
+
+.bounceball3::before {
+
+    animation: bounce 300ms alternate infinite ease;
+}
+
+.bounceball4::before {
+    animation: bounce 200ms alternate infinite ease;
+}
+
+@keyframes bounce {
+    0% {
+        top: 37px;
+        height: 5px;
+        border-radius: 60px 60px 20px 20px;
+        transform: scaleX(2);
+    }
+
+    25% {
+        height: 25px;
+        border-radius: 1%;
+        transform: scaleX(1);
+    }
+
+
+    100% {
+        top: 0;
+    }
+}
